@@ -13,6 +13,7 @@ import { config as WagmiConfig } from "@/config/wagmi-config";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { RainbowKitProvider } from "@rainbow-me/rainbowkit";
 import { FLOWISE_FLOW_ID, FLOWISE_URL } from "@/config/constants";
+import { Analytics } from "@vercel/analytics/react";
 
 const fontSans = Poppins({
   subsets: ["latin"],
@@ -83,6 +84,7 @@ export default function RootLayout({
             </QueryClientProvider>
           </WagmiProvider>
         </ThemeProvider>
+        <Analytics />
       </body>
     </html>
   );
