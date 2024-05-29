@@ -23,7 +23,8 @@ libs = ["node_modules", "lib"]
 [etherscan]
   # arbitrum = { key = "${API_KEY_ARBISCAN}" }
   # avalanche = { key = "${API_KEY_SNOWTRACE}" }
-  # bnb_smart_chain = { key = "${API_KEY_BSCSCAN}" }
+  bnb_smart_chain = { key = "${API_KEY_BSCSCAN}" }
+  bsc_testnet = { key = "${API_KEY_BSCSCAN}" }
   # gnosis_chain = { key = "${API_KEY_GNOSISSCAN}" }
   # goerli = { key = "${API_KEY_ETHERSCAN}" }
   # mainnet = { key = "${API_KEY_ETHERSCAN}" }
@@ -45,6 +46,7 @@ libs = ["node_modules", "lib"]
   # arbitrum = "https://arbitrum-mainnet.infura.io/v3/${API_KEY_INFURA}"
   # avalanche = "https://avalanche-mainnet.infura.io/v3/${API_KEY_INFURA}"
   bnb_smart_chain = "https://bsc-dataseed.binance.org"
+  bsc_testnet = "https://data-seed-prebsc-1-s1.binance.org:8545"
   gnosis_chain = "https://rpc.gnosischain.com"
   # goerli = "https://goerli.infura.io/v3/${API_KEY_INFURA}"
   localhost = "http://localhost:8545"

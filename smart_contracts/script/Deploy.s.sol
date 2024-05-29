@@ -8,6 +8,10 @@ import { BaseScript } from "./Base.s.sol";
 /// @dev See the Solidity Scripting tutorial: https://book.getfoundry.sh/tutorials/solidity-scripting
 contract Deploy is BaseScript {
     function run() public broadcast returns (SunkCostCharity scc) {
-         scc = new SunkCostCharity(IERC20(address(0)));
+        address tokenAddr = vm.envAddress("SUNK_COST_TOKEN_ADDRESS");
+        if (tokenAddr == address(0)) {
+            revert("SUNK_COST_TOKEN_ADDRESS not set");
+        }
+        scc = new SunkCostCharity(IERC20(tokenAddr));
     }
 }

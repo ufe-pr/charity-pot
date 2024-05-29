@@ -15,7 +15,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
-import { Address, parseUnits } from "viem";
+import { Address } from "viem";
 import { ICreateRoundSchema } from "../types";
 import { useCreateRound } from "../(lib)/hooks";
 import { useAccount, useWaitForTransactionReceipt } from "wagmi";
@@ -23,6 +23,7 @@ import { ConnectWalletButton } from "@/components/ui/connect-wallet-button";
 import DurationPicker, { Duration } from "@/components/ui/duration-picker";
 import LoadingModal from "@/components/ui/loading-modal";
 import { useRouter } from "next/navigation";
+import { parseTokenAmount } from "../../utils";
 
 export default function CreateRoundForm() {
   const imageRef = useRef<HTMLInputElement>(null);
@@ -62,8 +63,8 @@ export default function CreateRoundForm() {
         duration: BigInt(duration.toSeconds()),
         timerExtension: BigInt(timerExtension.toSeconds()),
         maxTimer: BigInt(maxTimer.toSeconds()),
-        initialBalance: parseUnits(initialBalance as string, 8),
-        priceIncrement: parseUnits(priceIncrement as string, 8),
+        initialBalance: parseTokenAmount(initialBalance as string),
+        priceIncrement: parseTokenAmount(priceIncrement as string),
         charityWallet: charityWallet as Address,
         promotionalImage: image?.toString(),
       };
