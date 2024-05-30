@@ -10,11 +10,9 @@ export default defineConfig({
       forge: {
         build: false
       },
-      include: [
-        '*.sol/*.json'
-      ],
       exclude: [
         'Mock*/**',
+        '*/*.sol/**'
       ]
     }),
   ],

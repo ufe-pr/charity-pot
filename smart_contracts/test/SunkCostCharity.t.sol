@@ -5,7 +5,7 @@ import { Test } from "forge-std/src/Test.sol";
 import { console2 } from "forge-std/src/console2.sol";
 
 import "../src/SunkCostCharity.sol";
-import "./MockERC20.sol";
+import { MockERC20 } from "./MockERC20.sol";
 
 contract SunkCostCharityTest is Test {
     SunkCostCharity internal scc;
