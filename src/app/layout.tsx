@@ -2,7 +2,6 @@
 
 import "./globals.css";
 import "@rainbow-me/rainbowkit/styles.css";
-import { BubbleChat } from "flowise-embed-react";
 
 import { Poppins, Seaweed_Script, Kode_Mono } from "next/font/google";
 import { cn } from "@/lib/utils";
@@ -12,8 +11,8 @@ import { WagmiProvider } from "wagmi";
 import { config as WagmiConfig } from "@/config/wagmi-config";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { RainbowKitProvider } from "@rainbow-me/rainbowkit";
-import { FLOWISE_FLOW_ID, FLOWISE_URL } from "@/config/constants";
 import { Analytics } from "@vercel/analytics/react";
+import AIChat from "./ai-chat";
 
 const fontSans = Poppins({
   subsets: ["latin"],
@@ -60,25 +59,7 @@ export default function RootLayout({
             <QueryClientProvider client={queryClient}>
               <RainbowKitProvider>
                 <Header />
-                <BubbleChat
-                  chatflowid={FLOWISE_FLOW_ID}
-                  apiHost={FLOWISE_URL}
-                  theme={{
-                    button: {
-                      backgroundColor: "#d94302",
-                      customIconSrc: "/static/icons/robot.svg",
-                      size: "large",
-                    },
-                    chatWindow: {
-                      width: 500,
-                      welcomeMessage:
-                        "Hey, I'm Lucy! How can I help you today?",
-                      userMessage: {
-                        backgroundColor: "#d94302",
-                      },
-                    },
-                  }}
-                />
+                <AIChat />
                 {children}
               </RainbowKitProvider>
             </QueryClientProvider>
