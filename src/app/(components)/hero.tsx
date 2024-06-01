@@ -1,5 +1,3 @@
-"use client";
-
 import { ConnectWalletButton } from "@/components/ui/connect-wallet-button";
 import { Button } from "@/components/ui/button";
 

@@ -1,15 +1,17 @@
-/* eslint-disable @next/next/no-img-element */
 import { cn } from "@/lib/utils";
 import Hero from "./(components)/hero";
+import Image from "next/image";
 
 function Section({
   children,
   imgSrc,
   alternate,
+  imgAlt,
 }: {
   children: React.ReactNode;
   imgSrc: string;
   alternate?: boolean;
+  imgAlt?: string;
 }) {
   return (
     <section className="min-h-[50vh] grid gap-10 md:grid-cols-2 container justify-items-center items-center">
@@ -21,7 +23,13 @@ function Section({
           }
         )}
       >
-        <img src={imgSrc} alt="" className="object-cover w-full h-full" />
+        <Image
+          src={imgSrc}
+          alt={imgAlt ?? ""}
+          width={400}
+          height={400}
+          className="object-cover w-full h-full"
+        />
       </div>
       <div className="max-w-[400px] text-lg text-primary-foreground leading-relaxed text-center">
         {children}

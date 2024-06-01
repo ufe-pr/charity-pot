@@ -1,19 +1,13 @@
-"use client";
-
 import "./globals.css";
 import "@rainbow-me/rainbowkit/styles.css";
 
 import { Poppins, Seaweed_Script, Kode_Mono } from "next/font/google";
 import { cn } from "@/lib/utils";
-import { ThemeProvider } from "@/components/theme-provider";
 import Header from "./(components)/header";
-import { WagmiProvider } from "wagmi";
-import { config as WagmiConfig } from "@/config/wagmi-config";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { RainbowKitProvider } from "@rainbow-me/rainbowkit";
 import { Analytics } from "@vercel/analytics/react";
 import AIChat from "./ai-chat";
 import Footer from "./(components)/footer";
+import ContextProvider from "./context-provider";
 
 const fontSans = Poppins({
   subsets: ["latin"],
@@ -33,8 +27,6 @@ const fontMono = Kode_Mono({
   weight: "variable",
 });
 
-const queryClient = new QueryClient();
-
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -50,23 +42,12 @@ export default function RootLayout({
           fontMono.variable
         )}
       >
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="light"
-          forcedTheme="light"
-          disableTransitionOnChange
-        >
-          <WagmiProvider config={WagmiConfig}>
-            <QueryClientProvider client={queryClient}>
-              <RainbowKitProvider>
-                <Header />
-                <AIChat />
-                {children}
-                <Footer />
-              </RainbowKitProvider>
-            </QueryClientProvider>
-          </WagmiProvider>
-        </ThemeProvider>
+        <ContextProvider>
+          <Header />
+          <AIChat />
+          {children}
+          <Footer />
+        </ContextProvider>
         <Analytics />
       </body>
     </html>
