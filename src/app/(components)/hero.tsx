@@ -4,7 +4,6 @@ import { ConnectWalletButton } from "@/components/ui/connect-wallet-button";
 import { Button } from "@/components/ui/button";
 
 export default function Hero() {
-  // TODO: Use context for managing wallet state
   return (
     <div className="section-full-screen flex items-center justify-center">
       <div className="items-center flex flex-col max-w-xl text-center space-y-8">

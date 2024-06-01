@@ -13,6 +13,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { RainbowKitProvider } from "@rainbow-me/rainbowkit";
 import { Analytics } from "@vercel/analytics/react";
 import AIChat from "./ai-chat";
+import Footer from "./(components)/footer";
 
 const fontSans = Poppins({
   subsets: ["latin"],
@@ -61,6 +62,7 @@ export default function RootLayout({
                 <Header />
                 <AIChat />
                 {children}
+                <Footer />
               </RainbowKitProvider>
             </QueryClientProvider>
           </WagmiProvider>
