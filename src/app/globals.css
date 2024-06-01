@@ -4,7 +4,7 @@
 
 @layer base {
   :root {
-    --background-image: url('/static/images/background.png');
+    --background-image: url("/static/images/background.png");
     --background: 52 100% 67%;
     --foreground: 0 0 0;
 
@@ -105,5 +105,11 @@
 @layer components {
   .section-full-screen {
     @apply min-h-[calc(100vh_-_var(--header-height))] px-5 lg:px-8;
+  }
+}
+
+@layer components {
+  flowise-chatbot div[part="bot"] {
+    right: 20px;
   }
 }

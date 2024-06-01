@@ -25,10 +25,11 @@ export default function AIChat() {
         },
         chatWindow: {
           width: Math.min(windowWidth - 20 * 2, 500),
-          welcomeMessage: "Hey, I'm Lucy! How can I help you today?",
+          welcomeMessage: "Hello there, I'm Charity! How can I help you today?",
           userMessage: {
             backgroundColor: "#d94302",
           },
+          poweredByTextColor: "transparent",
         },
       }}
     />

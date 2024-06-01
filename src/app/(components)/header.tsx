@@ -30,7 +30,7 @@ export default function Header() {
           </NavigationMenuList>
         </NavigationMenu> */}
         <div className="space-x-2">
-          <ModeToggle />
+          {/* <ModeToggle /> */}
           <ConnectWalletButton />
         </div>
       </header>
