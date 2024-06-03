@@ -20,7 +20,7 @@ export default function AIChat() {
       theme={{
         button: {
           backgroundColor: "#d94302",
-          customIconSrc: "/static/icons/robot.svg",
+          customIconSrc: "/static/images/babydogecharity.png",
           size: "large",
         },
         chatWindow: {

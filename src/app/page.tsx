@@ -17,9 +17,9 @@ function Section({
     <section className="min-h-[50vh] grid gap-10 md:grid-cols-2 container justify-items-center items-center">
       <div
         className={cn(
-          "rounded-3xl overflow-hidden w-full max-w-[400px] aspect-square",
+          "rounded-full md:rounded-3xl overflow-hidden w-full max-w-[400px] aspect-[3/4] md:aspect-square",
           {
-            "order-2": alternate,
+            "md:order-2": alternate,
           }
         )}
       >
