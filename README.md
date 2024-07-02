@@ -1,5 +1,9 @@
 ## Introduction
 
+> **Note**: for testing sake, the BUSD contract address was used for testing on the testnet deployment.
+> You can get test BUSD here: https://testnet.binance.org/faucet-smart
+> Change the token contract address when deploying to ensure that the BabyDogeCoin token is actually used
+
 ### Background and Inspiration
 Productivity and innovation in bringing people together have been our goals from the start. Whether through gaming, chatting, or exchanging common interests, we aim to benefit the status quo. Balancing these niches and creating utility for the crypto ecosystem inspired this project.
 
